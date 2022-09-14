@@ -1,4 +1,4 @@
-import PageComponent from '../Components/Layouts/Page/PageComponent';
+import PageComponent from '../../Components/Layouts/Page/PageComponent';
 
 const HomePage = () => (
   <PageComponent>

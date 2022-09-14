@@ -1,7 +1,6 @@
 import Route from '../../../Core/Navigation/Route';
-import FooModule from '../../Foo/Module';
-import HomePage from './Pages/HomePage';
-import NotFoundPage from './Pages/NotFoundPage';
+import HomePage from './Pages/Home/HomePage';
+import NotFoundPage from './Pages/NotFound/NotFoundPage';
 
 const CommonRoute = {
   HOME_PAGE: new Route({
