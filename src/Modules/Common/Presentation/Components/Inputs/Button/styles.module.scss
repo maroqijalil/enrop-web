@@ -23,13 +23,13 @@
   text-align: center;
   width: fit-content;
   padding: 10px 20px;
-  box-shadow: 2px 4px 4px $color-shadow-1;
+  box-shadow: $box-shadow-2;
   opacity: 0.8;
   transition-duration: $fast-transition;
   border-radius: 8px;
 
   &:hover {
-    box-shadow: 1px 2px 4px $color-shadow-1;
+    box-shadow: $box-shadow-1;
     opacity: 1.0;
   }
 

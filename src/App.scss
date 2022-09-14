@@ -23,9 +23,23 @@ $gray-1: #212529;
 $gray-2: #495057;
 $gray-3: #A4A7AB;
 $gray-4: #E9ECEF;
-$gray-5: #CED4DA;
+$gray-5: #F6F6F7;
 
 $color-shadow-1: rgba(0, 0, 0, 0.15);
+
+// Transition duration
+$fast-transition: 0.2s;
+$medium-transition: 0.4s;
+$slow-transition: 0.6s;
+
+// Depth level
+$depth-1: -1;
+$depth-2: -2;
+$depth-3: -3;
+
+// Shadow
+$box-shadow-1: 1px 2px 4px $color-shadow-1;
+$box-shadow-2: 2px 4px 4px $color-shadow-1;
 
 @mixin mobile {
   @media (max-width: #{$breakpoint-tablet}) {
@@ -38,11 +52,6 @@ $color-shadow-1: rgba(0, 0, 0, 0.15);
     @content;
   }
 }
-
-//transition duration
-$fast-transition: 0.2s;
-$medium-transition: 0.4s;
-$slow-transition: 0.6s;
 
 body, p {
   margin: 0;

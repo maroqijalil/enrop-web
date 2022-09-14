@@ -4,7 +4,7 @@ import Pattern2 from '../../../Assets/Pattern2';
 
 const HeaderSectionComponent = () => {
   return (
-    <section>
+    <section className={styles.section}>
       <HeaderIcon />
 
       <article className={styles.content}>

@@ -1,6 +1,6 @@
 @import "src/App";
 
-section {
+.section {
   display: flex;
   position: relative;
   gap: 5%;
@@ -27,7 +27,7 @@ section {
         height: 50%;
         width: 100%;
         bottom: 0;
-        z-index: -1;
+        z-index: $depth-1;
         border-radius: 100px;
         background-color: $color-primary;
       }
@@ -45,9 +45,10 @@ section {
 
   img {
     position: absolute;
-    z-index: -1;
+    z-index: $depth-3;
     opacity: 0.5;
     right: -1000px;
-    bottom: -1300px;
+    bottom: -1000px;
+    transform: scale(0.8, 0.8);
   }
 }
