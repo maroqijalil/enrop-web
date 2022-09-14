@@ -63,7 +63,7 @@ const PricingSectionComponent = () => {
       ]
     },
     {
-      type: 'Business',
+      type: 'Entrepreneur',
       price: '1.000.000',
       features: [
         'Pencatatan Produk',

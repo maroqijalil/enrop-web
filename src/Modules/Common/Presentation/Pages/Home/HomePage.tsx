@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 import AboutSectionComponent from '../../Components/Sections/About/AboutSectionComponent';
 import ServiceSectionComponent from '../../Components/Sections/Service/ServiceSectionComponent';
 import PricingSectionComponent from '../../Components/Sections/Pricing/PricingSectionComponent';
+import ContactSectionComponent from '../../Components/Sections/Contact/ContactSectionComponent';
 
 const HomePage = () => (
   <PageComponent>
@@ -17,6 +18,8 @@ const HomePage = () => (
       </div>
 
       <PricingSectionComponent />
+
+      <ContactSectionComponent />
     </div>
   </PageComponent>
 );

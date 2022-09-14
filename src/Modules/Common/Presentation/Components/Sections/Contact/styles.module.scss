@@ -1,0 +1,81 @@
+@import "src/App";
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 0;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h2 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .content {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      .item {
+        h3 {
+          margin: 0;
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+
+        p {
+          color: $color-primary;
+          font-size: 32px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .msg {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      h3 {
+        margin: 0;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .input1 {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .input2 {
+        display: flex;
+        gap: 28px;
+
+        .area {
+          flex-basis: 75%;
+        }
+
+        .btn {
+          flex-basis: 25%;
+        }
+      }
+    }
+  }
+}
