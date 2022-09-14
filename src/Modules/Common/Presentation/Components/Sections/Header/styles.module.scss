@@ -1,0 +1,53 @@
+@import "src/App";
+
+section {
+  display: flex;
+  position: relative;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  max-height: 596px;
+
+  .content {
+    max-width: 50%;
+
+    .title {
+      width: fit-content;
+      position: relative;
+
+      h1 {
+        margin: 0 8px;
+        font-size: 52px;
+      }
+
+      div {
+        position: absolute;
+        height: 50%;
+        width: 100%;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 100px;
+        background-color: $color-primary;
+      }
+    }
+
+    .subtitle {
+      font-size: 32px;
+    }
+
+    .desc {
+      margin-top: 12px;
+      font-size: 24px;
+    }
+  }
+
+  img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    right: -1000px;
+    bottom: -1300px;
+  }
+}

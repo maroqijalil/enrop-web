@@ -1,8 +1,9 @@
 import PageComponent from '../../Components/Layouts/Page/PageComponent';
+import HeaderSectionComponent from '../../Components/Sections/Header/HeaderSectionComponent';
 
 const HomePage = () => (
   <PageComponent>
-    <p>HomeScreen</p>
+    <HeaderSectionComponent />
   </PageComponent>
 );
 

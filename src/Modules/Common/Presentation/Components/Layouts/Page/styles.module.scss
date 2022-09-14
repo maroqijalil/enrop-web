@@ -1,6 +1,10 @@
 @import "src/App";
 
-main {
-  margin: 0;
-  padding: 0 136px;
+.main {
+  overflow: hidden;
+
+  main {
+    margin: 0;
+    padding: 0 136px;
+  }
 }
