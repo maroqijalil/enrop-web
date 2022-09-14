@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+// Breakpoints
+$breakpoint-tablet: 768px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+// Colors
+$color-primary: #01B7FE;
+$color-primary-light: #6ae9ff;
+$color-primary-dark: #0087cb;
+$color-secondary: #7ee5ff;
+$color-secondary-light: #b4ffff;
+$color-secondary-dark: #45b3cc;
+$color-variant-1: #0066FE;
+$color-variant-2: #CB97E0;
+
+$color-warning: #FFC107;
+$color-error: #F72E2E;
+$color-success: #6AF100;
+$color-dark-grey: #5C5C5C;
+$color-text: black;
+$gray-1: #212529;
+$gray-2: #495057;
+$gray-3: #A4A7AB;
+$gray-4: #E9ECEF;
+$gray-5: #CED4DA;
+
+$color-shadow-1: rgba(0, 0, 0, 0.15);
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+//transition duration
+$fast-transition: 0.2s;
+$medium-transition: 0.4s;
+$slow-transition: 0.6s;
+
+body, p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.space {
+  margin-top: 18px;
 }

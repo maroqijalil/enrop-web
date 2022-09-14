@@ -1,0 +1,25 @@
+@import "src/App";
+
+header {
+  display: flex;
+  width: 100%;
+  margin: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 36px;
+
+    li {
+      display: inline;
+
+      h1 {
+        font-size: 24px;
+        text-transform: uppercase;
+        display: inline;
+        margin: 0;
+      }
+    }
+  }
+}

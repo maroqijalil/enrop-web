@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import './styles.module.scss';
+import HeaderComponent from '../Header/HeaderComponent';
 
 interface Props {
   children: ReactNode;
@@ -7,7 +9,9 @@ interface Props {
 const PageComponent = ({ children }: Props) => {
   return (
     <>
-      {children}
+      <HeaderComponent />
+
+      <main>{children}</main>
     </>
   );
 };

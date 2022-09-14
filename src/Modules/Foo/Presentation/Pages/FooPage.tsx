@@ -1,4 +1,4 @@
-import PageComponent from '../../../Common/Presentation/Components/Layouts/PageComponent';
+import PageComponent from '../../../Common/Presentation/Components/Layouts/Page/PageComponent';
 
 const FooPage = () => (
   <PageComponent>

@@ -2,7 +2,7 @@ import { Routes, Route as RouteComponent } from 'react-router-dom';
 import { useMemo } from 'react';
 import Route from './Route';
 import Modules from '../Config/Modules';
-import HeadComponent from '../../Modules/Common/Presentation/Components/Layouts/HeadComponent';
+import HeadComponent from '../../Modules/Common/Presentation/Components/Layouts/Head/HeadComponent';
 
 const AppRouter = () => {
   const routes = useMemo(() => {
