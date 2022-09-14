@@ -1,6 +1,7 @@
 @import "src/App";
 
 .section {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 64px 0;
@@ -42,5 +43,13 @@
         }
       }
     }
+  }
+
+  img {
+    position: absolute;
+    z-index: $depth-3;
+    left: -1700px;
+    bottom: -1500px;
+    transform: scale(0.75, 0.75);
   }
 }

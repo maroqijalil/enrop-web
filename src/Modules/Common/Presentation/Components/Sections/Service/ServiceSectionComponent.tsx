@@ -5,6 +5,7 @@ import PencatatanIcon from '../../../Assets/PencatatanIcon';
 import AnalisisIcon from '../../../Assets/AnalisisIcon';
 import SupportIcon from '../../../Assets/SupportIcon';
 import PrediksiIcon from '../../../Assets/PrediksiIcon';
+import Pattern2 from '../../../Assets/Pattern2';
 
 interface Props {
   icon: ReactNode;
@@ -72,6 +73,8 @@ const ServiceSectionComponent = () => {
           <ServiceItemComponent key={index} {...service} />
         ))}
       </div>
+
+      <img src={new Pattern2().localUrl} />
     </section>
   );
 };
