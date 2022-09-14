@@ -8,7 +8,7 @@
   align-items: center;
   margin: 0;
   height: 100vh;
-  max-height: 596px;
+  max-height: 600px;
 
   .content {
     max-width: 50%;
@@ -47,8 +47,8 @@
     position: absolute;
     z-index: $depth-3;
     opacity: 0.5;
-    right: -1000px;
-    bottom: -1000px;
-    transform: scale(0.8, 0.8);
+    right: -1100px;
+    bottom: -1200px;
+    transform: scale(0.75, 0.75);
   }
 }
