@@ -5,6 +5,7 @@ import AboutSectionComponent from '../../Components/Sections/About/AboutSectionC
 import ServiceSectionComponent from '../../Components/Sections/Service/ServiceSectionComponent';
 import PricingSectionComponent from '../../Components/Sections/Pricing/PricingSectionComponent';
 import ContactSectionComponent from '../../Components/Sections/Contact/ContactSectionComponent';
+import FooterSectionComponent from '../../Components/Sections/Footer/FooterSectionComponent';
 
 const HomePage = () => (
   <PageComponent>
@@ -20,6 +21,8 @@ const HomePage = () => (
       <PricingSectionComponent />
 
       <ContactSectionComponent />
+
+      <FooterSectionComponent />
     </div>
   </PageComponent>
 );

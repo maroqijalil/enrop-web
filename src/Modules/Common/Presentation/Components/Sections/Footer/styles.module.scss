@@ -1,0 +1,67 @@
+@import "src/App";
+
+.section {
+  display: flex;
+  position: relative;
+  gap: 5%;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0;
+
+  .content {
+    .logo {
+      display: flex;
+      gap: 18px;
+      align-items: end;
+
+      .title {
+        width: fit-content;
+        position: relative;
+
+        h1 {
+          margin: 0 8px;
+          font-size: 52px;
+        }
+
+        div {
+          position: absolute;
+          height: 50%;
+          width: 100%;
+          bottom: 0;
+          z-index: $depth-1;
+          border-radius: 100px;
+          background-color: $color-primary;
+        }
+      }
+    }
+
+    p {
+      margin-top: 18px;
+      font-size: 18px;
+    }
+  }
+
+  .follow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+      margin: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .icon {
+      display: flex;
+      gap: 18px;
+    }
+  }
+
+  img {
+    position: absolute;
+    z-index: $depth-3;
+    bottom: -500px;
+    transform: scale(1.5, 1.5);
+  }
+}
