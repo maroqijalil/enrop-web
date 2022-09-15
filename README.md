@@ -9,7 +9,7 @@ Tampilan website ini didasarkan pada hasil desain (di Figma) dari:
 
 
 Versi Desktop dan Mobile:
-![Tampilan Website](/info/tampilan.png)
+![Tampilan Website](./info/tampilan.png)
 
 ## Teknologi
 
