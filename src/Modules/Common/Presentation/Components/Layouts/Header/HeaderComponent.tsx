@@ -4,13 +4,17 @@ import LogoIcon from '../../../Assets/LogoIcon';
 import Pattern1 from '../../../Assets/Pattern1';
 import { useSection } from '../../../Contexts/Section/SectionContext';
 import { useEffect, useRef, useState } from 'react';
+import BurgerIcon from '../../../Assets/BurgerIcon';
+import ModalCloseIcon from '../../../Assets/ModalCloseIcon';
 
 const HeaderComponent = () => {
   const section = useSection();
 
   const [showNavbar, setShowNavbar] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const headerRef = useRef<HTMLHtmlElement>(null);
+  const scrollYRef = useRef(window.scrollY);
 
   const menus = ['About', 'Pricing', 'Contact'];
 
@@ -18,50 +22,40 @@ const HeaderComponent = () => {
     if (window.scrollY > (headerRef.current?.offsetHeight ?? 100)) {
       setShowNavbar(true);
       return true;
-    } else {
-      setShowNavbar(false);
-      return false;
     }
+
+    if (window.innerWidth > 768) {
+      setShowNavbar(false);
+    } else {
+      setShowNavbar(true);
+    }
+
+    return false;
   };
 
-  let prevScrollY = window.scrollY;
   const onScrollListener = () => {
     if (validateNavbar()) {
-      setShowNavbar(window.scrollY < prevScrollY);
+      setShowNavbar(window.scrollY < scrollYRef.current);
     }
-    prevScrollY = window.scrollY;
+
+    scrollYRef.current = window.scrollY;
   };
 
-  window.addEventListener('scroll', onScrollListener);
+  const getNavComponent = () => (
+    <>
+      <ul>
+        {menus.map((menu, index) => (
+          <li
+            key={index}
+            onClick={() => {
+              section.scrollTo(menu);
+            }}>
+            <h1>{menu}</h1>
+          </li>
+        ))}
+      </ul>
 
-  useEffect(() => {
-    validateNavbar();
-  }, [headerRef]);
-
-  return (
-    <header ref={headerRef}>
-      <div className={styles.logo}>
-        <LogoIcon />
-        <h1>Home</h1>
-
-        <img src={new Pattern1().localUrl} />
-      </div>
-
-      <nav className={styles.static}>
-        <ul>
-          {menus.map((menu, index) => (
-            <li
-              key={index}
-              onClick={() => {
-                section.scrollTo(menu);
-              }}>
-              <h1>{menu}</h1>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div>
+      <div className={styles.btn}>
         <ButtonComponent
           text={'Login'}
           onClick={() => {
@@ -69,33 +63,42 @@ const HeaderComponent = () => {
           }}
         />
       </div>
+    </>
+  );
+
+  useEffect(() => {
+    validateNavbar();
+
+    window.addEventListener('scroll', onScrollListener);
+    window.addEventListener('resize', onScrollListener);
+  }, []);
+
+  return (
+    <header ref={headerRef}>
+      <div className={styles.logo}>
+        <LogoIcon />
+        <h1>Home</h1>
+      </div>
+
+      <img src={new Pattern1().localUrl} />
+
+      <nav className={styles.static}>{getNavComponent()}</nav>
 
       <nav className={`${styles.fixed} ${showNavbar ? '' : styles.hidden}`}>
+        <div
+          className={styles.menuBtn}
+          onClick={() => {
+            setIsMenuOpen((prevValue) => !prevValue);
+          }}>
+          {isMenuOpen ? <ModalCloseIcon stroke={'black'} /> : <BurgerIcon color={'black'} />}
+        </div>
+
         <div className={styles.logo}>
           <LogoIcon width={42} height={42} color={'black'} />
           <h1>Enrop</h1>
         </div>
 
-        <ul>
-          {menus.map((menu, index) => (
-            <li
-              key={index}
-              onClick={() => {
-                section.scrollTo(menu);
-              }}>
-              <h1>{menu}</h1>
-            </li>
-          ))}
-        </ul>
-
-        <div>
-          <ButtonComponent
-            text={'Login'}
-            onClick={() => {
-              console.log('Login');
-            }}
-          />
-        </div>
+        {getNavComponent()}
       </nav>
     </header>
   );
