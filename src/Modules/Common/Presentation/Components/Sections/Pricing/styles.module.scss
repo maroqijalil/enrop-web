@@ -15,11 +15,19 @@
       text-align: center;
       margin: 0;
       font-size: 32px;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
 
     p {
       text-align: center;
       font-size: 24px;
+
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
 
@@ -28,6 +36,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-top: 32px;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .card {
       background-color: white;
@@ -38,6 +52,10 @@
       padding: 32px;
       box-shadow: $box-shadow-2;
       transition-duration: $fast-transition;
+
+      @include mobile {
+        padding: 23px;
+      }
 
       &:hover {
         box-shadow: $box-shadow-1;
@@ -54,8 +72,16 @@
           margin: 8px 0 0;
           font-size: 24px;
 
+          @include mobile {
+            font-size: 20px;
+          }
+
           span {
             font-size: 42px;
+
+            @include mobile {
+              font-size: 36px;
+            }
           }
         }
       }

@@ -3,7 +3,11 @@
 footer {
   align-items: center;
   margin: 0;
-  padding: 24px 224px;
+  padding: 24px 11.5%;
+
+  @include mobile {
+    padding: 12px 24px;
+  }
 
   div {
     width: 100%;

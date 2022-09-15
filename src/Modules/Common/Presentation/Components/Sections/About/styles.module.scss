@@ -6,9 +6,17 @@
   position: relative;
   margin: 186px 0;
 
+  @include mobile {
+    margin: 96px 0;
+  }
+
   h2 {
     margin: 0;
     font-size: 32px;
+
+    @include mobile {
+      font-size: 28px;
+    }
   }
 
   .content {
@@ -18,12 +26,24 @@
     align-items: center;
     margin-top: 32px;
 
+    @include mobile {
+      margin-top: 28px;
+    }
+
     .img {
       flex-grow: 1;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     .desc {
       font-size: 24px;
+
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
 
@@ -37,5 +57,9 @@
     width: 200vw;
     transform: rotate(5deg);
     box-shadow: $box-shadow-2;
+
+    @include mobile {
+      height: 400px;
+    }
   }
 }

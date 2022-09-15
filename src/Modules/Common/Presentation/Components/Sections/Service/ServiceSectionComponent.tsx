@@ -20,17 +20,19 @@ const ServiceItemComponent = (props: Props) => {
     <div className={styles.card}>
       {icon}
 
-      <div className={styles.cardContent}>
-        <h3>{title}</h3>
-        <p>{content}</p>
-      </div>
+      <div className={styles.body}>
+        <div className={styles.cardContent}>
+          <h3>{title}</h3>
+          <p>{content}</p>
+        </div>
 
-      <ButtonComponent
-        text={'Pelajari lebih lanjut'}
-        onClick={() => {
-          console.log(`Pelajari ${title}`);
-        }}
-      />
+        <ButtonComponent
+          text={'Pelajari lebih lanjut'}
+          onClick={() => {
+            console.log(`Pelajari ${title}`);
+          }}
+        />
+      </div>
     </div>
   );
 };

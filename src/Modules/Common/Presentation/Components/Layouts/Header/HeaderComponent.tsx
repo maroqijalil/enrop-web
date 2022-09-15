@@ -6,9 +6,11 @@ import { useSection } from '../../../Contexts/Section/SectionContext';
 import { useEffect, useRef, useState } from 'react';
 import BurgerIcon from '../../../Assets/BurgerIcon';
 import ModalCloseIcon from '../../../Assets/ModalCloseIcon';
+import { useMasukModal } from '../../../Contexts/MasukModal/MasukModalContext';
 
 const HeaderComponent = () => {
   const section = useSection();
+  const masukModal = useMasukModal();
 
   const [showNavbar, setShowNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,6 +28,7 @@ const HeaderComponent = () => {
 
     if (window.innerWidth > 768) {
       setShowNavbar(false);
+      setIsMenuOpen(false);
     } else {
       setShowNavbar(true);
     }
@@ -35,7 +38,12 @@ const HeaderComponent = () => {
 
   const onScrollListener = () => {
     if (validateNavbar()) {
-      setShowNavbar(window.scrollY < scrollYRef.current);
+      if (window.scrollY < scrollYRef.current) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+        setIsMenuOpen(false);
+      }
     }
 
     scrollYRef.current = window.scrollY;
@@ -60,7 +68,7 @@ const HeaderComponent = () => {
         <ButtonComponent
           text={'Login'}
           onClick={() => {
-            console.log('Login');
+            masukModal.show();
           }}
         />
       </div>

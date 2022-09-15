@@ -14,10 +14,18 @@
     h2 {
       margin: 0;
       font-size: 32px;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
 
     p {
       font-size: 24px;
+
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
 
@@ -27,19 +35,40 @@
     gap: 28px;
     margin-top: 32px;
 
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .card {
       display: flex;
       flex-direction: column;
       gap: 18px;
 
-      .cardContent {
-        h3 {
-          margin: 0 0 8px;
-          font-size: 24px;
+      @include mobile {
+        flex-direction: row;
+        max-width: 90%;
+      }
+
+      .body {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        @include mobile {
+          flex-basis: 75%;
         }
 
-        p {
-          font-size: 18px;
+        .cardContent {
+          h3 {
+            margin: 0 0 8px;
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 18px;
+          }
         }
       }
     }
