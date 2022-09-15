@@ -2,6 +2,7 @@ import AssetProps from '../Props/AssetProps';
 
 const ModalCloseIcon = (props: AssetProps) => {
   const {width, height, stroke} = props;
+
   return (
     <svg
       width={width ?? 23}

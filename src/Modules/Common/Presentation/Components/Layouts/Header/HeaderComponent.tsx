@@ -48,6 +48,7 @@ const HeaderComponent = () => {
           <li
             key={index}
             onClick={() => {
+              setIsMenuOpen(false);
               section.scrollTo(menu);
             }}>
             <h1>{menu}</h1>
@@ -85,12 +86,17 @@ const HeaderComponent = () => {
       <nav className={styles.static}>{getNavComponent()}</nav>
 
       <nav className={`${styles.fixed} ${showNavbar ? '' : styles.hidden}`}>
-        <div
-          className={styles.menuBtn}
-          onClick={() => {
-            setIsMenuOpen((prevValue) => !prevValue);
-          }}>
-          {isMenuOpen ? <ModalCloseIcon stroke={'black'} /> : <BurgerIcon color={'black'} />}
+        <div className={styles.menuBtn}>
+          <div
+            onClick={() => {
+              setIsMenuOpen((prevValue) => !prevValue);
+            }}>
+            {isMenuOpen ? <ModalCloseIcon stroke={'black'} /> : <BurgerIcon color={'black'} />}
+          </div>
+
+          <div className={`${styles.menu} ${isMenuOpen ? styles.show : ''}`}>
+            {getNavComponent()}
+          </div>
         </div>
 
         <div className={styles.logo}>
