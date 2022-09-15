@@ -7,19 +7,22 @@ const SectionProvider = ({ children }: { children: ReactNode }) => {
   const contactRef = useRef<HTMLHtmlElement>(null);
 
   const windowScrollTo = (e: RefObject<HTMLHtmlElement>) => {
-    window.scrollTo({
-      top: e.current?.offsetTop,
-      behavior: 'smooth'
-    });
+    if (e.current) {
+      const isScrollUp = window.scrollY > e.current?.offsetTop;
+      window.scrollTo({
+        top: e.current.offsetTop + (isScrollUp ? -128 : 0),
+        behavior: 'smooth'
+      });
+    }
   };
 
   const scrollTo = (section: string | 'About' | 'Pricing' | 'Contact') => {
     if (section === 'About') {
       windowScrollTo(aboutRef);
     } else if (section === 'Pricing') {
-      windowScrollTo(pricingRef)
+      windowScrollTo(pricingRef);
     } else if (section === 'Contact') {
-      windowScrollTo(contactRef)
+      windowScrollTo(contactRef);
     }
   };
 

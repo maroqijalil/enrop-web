@@ -13,6 +13,7 @@ header {
     gap: 28px;
 
     h1 {
+      margin: 0;
       font-size: 42px;
       color: white;
       text-transform: uppercase;
@@ -26,11 +27,60 @@ header {
     }
   }
 
-  nav {
+  nav.static {
     margin-right: 64px;
 
     ul {
       margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 36px;
+
+      li {
+        display: inline;
+
+        h1 {
+          font-size: 24px;
+          text-transform: uppercase;
+          display: inline;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  nav.fixed {
+    padding: 24px 136px;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1;
+    box-shadow: $box-shadow-1;
+    transition: top $medium-transition;
+
+    &.hidden {
+      top: -100px;
+    }
+
+    .logo {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      gap: 28px;
+
+      h1 {
+        margin: 0;
+        font-size: 32px;
+        color: black;
+      }
+    }
+
+    ul {
+      margin: 0 64px;
       padding: 0;
       display: flex;
       gap: 36px;
