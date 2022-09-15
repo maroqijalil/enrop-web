@@ -1,9 +1,12 @@
 import styles from './styles.module.scss';
 import AboutIcon from '../../../Assets/AboutIcon';
+import { useSection } from '../../../Contexts/Section/SectionContext';
 
 const AboutSectionComponent = () => {
+  const section = useSection();
+
   return (
-    <section className={styles.section}>
+    <section ref={section.aboutRef} className={styles.section}>
       <h2>Penyedia Jasa Platform ERP Terpercaya Sejak 2009</h2>
 
       <article className={styles.content}>

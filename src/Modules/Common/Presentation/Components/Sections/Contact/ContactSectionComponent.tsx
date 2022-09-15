@@ -2,10 +2,13 @@ import styles from './styles.module.scss';
 import TextInputComponent from '../../Inputs/TextInput/TextInputComponent';
 import TextAreaComponent from '../../Inputs/TextArea/TextAreaComponent';
 import ButtonComponent from '../../Inputs/Button/ButtonComponent';
+import { useSection } from '../../../Contexts/Section/SectionContext';
 
 const ContactSectionComponent = () => {
+  const section = useSection();
+
   return (
-    <section className={styles.section}>
+    <section ref={section.contactRef} className={styles.section}>
       <div className={styles.title}>
         <h2>Hubungi kami!</h2>
         <p>

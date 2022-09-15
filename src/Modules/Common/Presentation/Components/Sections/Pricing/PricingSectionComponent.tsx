@@ -1,6 +1,7 @@
 import styles from './styles.module.scss';
 import ButtonComponent from '../../Inputs/Button/ButtonComponent';
 import CheckIcon from '../../../Assets/CheckIcon';
+import { useSection } from '../../../Contexts/Section/SectionContext';
 
 interface Props {
   type: string;
@@ -43,6 +44,8 @@ const PricingItemComponent = (props: Props) => {
 };
 
 const PricingSectionComponent = () => {
+  const section = useSection();
+
   const services: Props[] = [
     {
       type: 'Basic',
@@ -77,7 +80,7 @@ const PricingSectionComponent = () => {
   ];
 
   return (
-    <section className={styles.section}>
+    <section ref={section.pricingRef} className={styles.section}>
       <div className={styles.title}>
         <h2>Harga terjangaku</h2>
         <p>Temukan penawaran menarik dari kami</p>

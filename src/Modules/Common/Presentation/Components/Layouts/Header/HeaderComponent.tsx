@@ -2,8 +2,11 @@ import styles from './styles.module.scss';
 import ButtonComponent from '../../Inputs/Button/ButtonComponent';
 import LogoIcon from '../../../Assets/LogoIcon';
 import Pattern1 from '../../../Assets/Pattern1';
+import { useSection } from '../../../Contexts/Section/SectionContext';
 
 const HeaderComponent = () => {
+  const section = useSection();
+
   const menus = ['About', 'Pricing', 'Contact'];
 
   return (
@@ -18,7 +21,9 @@ const HeaderComponent = () => {
       <nav>
         <ul>
           {menus.map((menu, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => {
+              section.scrollTo(menu);
+            }}>
               <h1>{menu}</h1>
             </li>
           ))}
