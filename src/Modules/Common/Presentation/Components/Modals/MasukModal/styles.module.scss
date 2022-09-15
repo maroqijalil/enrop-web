@@ -1,22 +1,70 @@
 @import "src/App";
 
-.background {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  position: fixed;
-  z-index: $top-modal;
+.card {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 32px;
+  box-shadow: $box-shadow-2;
+  width: 500px;
+  margin: 0 auto;
 
-  .modal {
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 100%;
+  @include mobile {
+    width: 80%;
+    padding: 24px;
+  }
+
+  .header {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        margin: 0;
+        font-size: 36px;
+        color: $color-primary;
+
+        @include mobile {
+          font-size: 28px;
+        }
+      }
+
+      .btn {
+        cursor: pointer;
+      }
+    }
+
+    p {
+      margin: 8px 0 0;
+      font-size: 24px;
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 42px;
+
+        @include mobile {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+
+  .cardContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
   }
 }

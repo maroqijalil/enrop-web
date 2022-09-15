@@ -68,6 +68,7 @@ const HeaderComponent = () => {
         <ButtonComponent
           text={'Login'}
           onClick={() => {
+            setIsMenuOpen(false);
             masukModal.show();
           }}
         />
